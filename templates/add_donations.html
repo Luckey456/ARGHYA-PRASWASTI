@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Donation Form</title>
+    <style>
+      /* Import Google font - Poppins */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #929AAB, #393E46);
+      }
+
+      .container {
+        position: relative;
+        max-width: 700px;
+        width: 100%;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More shadow for floating effect */
+      }
+
+      .container header {
+        font-size: 1.8rem;
+        color: #333;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .container .form {
+        margin-top: 30px;
+      }
+
+      .form .input-box {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .input-box label {
+        color: #333;
+      }
+
+      .form .input-box input,
+      .form select {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        color: #707070;
+        margin-top: 8px;
+        border: 1px solid #ddd;
+        border-radius: 8px; /* More rounded corners */
+        padding: 0 15px;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .input-box input:focus,
+      .form select:focus {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form .column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form button {
+        height: 50px;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 30px;
+        border: none;
+        cursor: pointer;
+        background: #929AAB; /* Updated button color to match the image */
+        border-radius: 8px; /* More rounded corners for button */
+        transition: all 0.2s ease;
+      }
+
+      .form button:hover {
+        background: #393E46; /* Slightly darker on hover */
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 500px) {
+        .form .column {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <header>Donation Form</header>
+      <form action="/add_donation" method="post" class="form">
+
+        <!-- Dropdown for Names Fetched from Database -->
+        <div class="input-box">
+          <label for="nameSelect">Select Name</label>
+          <select id="nameSelect" name="name">
+            {% for name in names %}
+              <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Manually Entered Donation Fields -->
+        <div class="column">
+          <div class="input-box">
+            <label>SWASTYAYANI</label>
+            <input type="text" name="swastyayani" placeholder="Enter SWASTYAYANI" required />
+          </div>
+          <div class="input-box">
+            <label>ISTAVRITY</label>
+            <input type="text" name="istavrity" placeholder="Enter ISTAVRITY" required />
+          </div>
+          <div class="input-box">
+            <label>ACHARYAVRITY</label>
+            <input type="text" name="acharyavrity" placeholder="Enter ACHARYAVRITY" required />
+          </div>
+          <div class="input-box">
+            <label>DAKSHINA</label>
+            <input type="text" name="dakshina" placeholder="Enter DAKSHINA" required />
+          </div>
+          <div class="input-box">
+            <label>SANGATHANI</label>
+            <input type="text" name="sangathani" placeholder="Enter SANGATHANI" required />
+          </div>
+          <div class="input-box">
+            <label>ANANDABAZAR</label>
+            <input type="text" name="anandabazar" placeholder="Enter ANANDABAZAR" required />
+          </div>
+          <div class="input-box">
+            <label>PRONAMI / BHOG</label>
+            <input type="text" name="pronami_bhog" placeholder="Enter PRONAMI / BHOG" required />
+          </div>
+          <div class="input-box">
+            <label>SRI MANDIR</label>
+            <input type="text" name="sri_mandir" placeholder="Enter SRI MANDIR" required />
+          </div>
+          <div class="input-box">
+            <label>RITWIKI</label>
+            <input type="text" name="ritwiki" placeholder="Enter RITWIKI" required />
+          </div>
+          <div class="input-box">
+            <label>UTSAV</label>
+            <input type="text" name="utsav" placeholder="Enter UTSAV" required />
+          </div>
+          <div class="input-box">
+            <label>CENTENARY</label>
+            <input type="text" name="centenary" placeholder="Enter CENTENARY" required />
+          </div>
+          <div class="input-box">
+            <label>MISCELLANEOUS</label>
+            <input type="text" name="miscellaneous" placeholder="Enter MISCELLANEOUS" />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>

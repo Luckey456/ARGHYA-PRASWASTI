@@ -1,0 +1,123 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url("/static/images/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 15px;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); /* Glassmorphism Effect */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  text-align: center;
+}
+
+.cover img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.forms {
+  margin-top: 20px;
+}
+
+.forms .form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-content .title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.input-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 45px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.input-box i {
+  position: absolute;
+  left: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+.button input {
+  background-color: #333;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.button input:hover {
+  background-color: #555;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .input-box input {
+    font-size: 14px;
+    padding: 12px 40px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}

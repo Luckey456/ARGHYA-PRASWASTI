@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation List</title>
+    
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Donations</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>SWASTYAYANI</th>
+                <th>ISTAVRITY</th>
+                <th>ACHARYAVRITY</th>
+                <th>DAKSHINA</th>
+                <th>SANGATHANI</th>
+                <th>ANANDABAZAR</th>
+                <th>PRONAMI / BHOG</th>
+                <th>SRI MANDIR</th>
+                <th>RITWIKI</th>
+                <th>UTSAV</th>
+                <th>CENTENARY</th>
+                <th>MISCELLANEOUS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donation in donations %}
+            <tr>
+                <td>{{ donation.name }}</td>
+                <td>{{ donation.swastyayani }}</td>
+                <td>{{ donation.istavrity }}</td>
+                <td>{{ donation.acharyavrity }}</td>
+                <td>{{ donation.dakshina }}</td>
+                <td>{{ donation.sangathani }}</td>
+                <td>{{ donation.anandabazar }}</td>
+                <td>{{ donation.pronami_bhog }}</td>
+                <td>{{ donation.sri_mandir }}</td>
+                <td>{{ donation.ritwiki }}</td>
+                <td>{{ donation.utsav }}</td>
+                <td>{{ donation.centenary }}</td>
+                <td>{{ donation.miscellaneous }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

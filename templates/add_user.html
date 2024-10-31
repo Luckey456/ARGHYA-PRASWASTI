@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form</title>
+    
+
+    <style>
+      /* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #929AAB, #393E46);
+}
+
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More shadow for floating effect */
+}
+
+.container header {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+.container .form {
+  margin-top: 30px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+}
+
+.form .input-box input,
+.form .select-box select {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* More rounded corners */
+  padding: 0 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-box input:focus {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form .gender-option {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.gender-option .gender {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gender input {
+  accent-color: #393E46; /* Custom accent color */
+}
+
+.form .gender label {
+  color: #707070;
+  font-size: 1rem;
+}
+
+.address .select-box select {
+  margin-top: 15px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+
+.form button {
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  background: #929AAB; /* Updated button color to match the image */
+  border-radius: 8px; /* More rounded corners for button */
+  transition: all 0.2s ease;
+}
+
+.form button:hover {
+  background: #393E46; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form .gender-option {
+    row-gap: 15px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="/add_user" method="post" class="form">
+
+        <!-- User ID and Username (Side-by-side) -->
+        <div class="column">
+          <div class="input-box">
+            <label>User ID</label>
+            <input type="text" placeholder="User ID" name="user_id" required />
+          </div>
+          <div class="input-box">
+            <label>Username</label>
+            <input type="text" placeholder="Username" name="username" required />
+          </div>
+        </div>
+
+        <!-- Password and Email (Side-by-side) -->
+        <div class="column">
+          <div class="input-box">
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password" required />
+          </div>
+          <div class="input-box">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email address" name="email" required />
+          </div>
+        </div>
+
+        <!-- First Name and Last Name (Side-by-side) -->
+        <div class="column">
+          <div class="input-box">
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" name="first_name" required />
+          </div>
+          <div class="input-box">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" name="last_name" required />
+          </div>
+        </div>
+
+        <!-- Phone Number and Date of Birth (Side-by-side) -->
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" name="phone_number" required />
+          </div>
+          <div class="input-box">
+            <label>Date of Birth</label>
+            <input type="date" name="date_of_birth" required />
+          </div>
+        </div>
+
+        <!-- Registration Date and Status (Side-by-side) -->
+        <div class="column">
+          <div class="input-box">
+            <label>Registration Date</label>
+            <input type="date" name="registration_date" required />
+          </div>
+          <div class="gender-box">
+            <h3>Status</h3>
+            <div class="gender-option">
+              <div class="gender">
+                <input type="radio" id="active" name="status" value="active" checked />
+                <label for="active">Active</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="inactive" name="status" value="inactive" />
+                <label for="inactive">Inactive</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
